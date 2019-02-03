@@ -20,4 +20,15 @@ class TicketService
     {
         $this->repository = $repository;
     }
+
+    /**
+     * Method to get paginated Tickets (with relations)
+     *
+     * @param int $paginate
+     * @return mixed
+     */
+    public function paginate(int $paginate = 5)
+    {
+        return $this->repository->paginate($paginate);
+    }
 }

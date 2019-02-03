@@ -11,6 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/tickets', 'TicketController@index')->name('ticket.index');
+Route::get('/tickets/cadastrar', 'TicketController@create')->name('ticket.create');

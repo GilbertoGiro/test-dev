@@ -12,16 +12,16 @@ class Ticket extends Model
      * @var array
      */
     protected $fillable = [
-        'id', 'title', 'order_number', 'content', 'user_id'
+        'id', 'title', 'content'
     ];
 
     /**
-     * Method to get related User
+     * Method to get related Order
      *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function user()
+    public function order()
     {
-        return $this->belongsTo(User::class, 'user_id', 'id');
+        return $this->hasOne(Order::class, 'ticket_id', 'id');
     }
 }

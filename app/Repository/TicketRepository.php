@@ -15,4 +15,15 @@ class TicketRepository extends AbstractRepository
     {
         parent::__construct($model);
     }
+
+    /**
+     * Method to get paginated Tickets
+     *
+     * @param int $paginate
+     * @return mixed
+     */
+    public function paginate(int $paginate = 5)
+    {
+        return $this->model::with(['order.user'])->get();
+    }
 }

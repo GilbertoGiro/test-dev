@@ -28,6 +28,19 @@ class TicketController
      */
     public function index()
     {
-        return view('ticket.index');
+        $ticketRoute = true;
+        $tickets = $this->service->paginate();
+        return view('ticket.index', compact('ticketRoute', 'tickets'));
+    }
+
+    /**
+     * Method to show ticket register form
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function create()
+    {
+        $ticketRoute = true;
+        return view('ticket.create', compact('ticketRoute'));
     }
 }

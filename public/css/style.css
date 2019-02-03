@@ -1,0 +1,127 @@
+/* Application Styles - Fonts */
+@font-face {
+    font-family: 'Roboto';
+    src: url("../fonts/Roboto_Mono/RobotoMono-Regular.ttf");
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url("../fonts/Raleway/Raleway-Regular.ttf");
+}
+
+/* Application Styles - HTML tags */
+body {
+    margin: 0;
+    color: #555;
+    font-family: 'Raleway', sans-serif;
+}
+
+textarea {
+    resize: none;
+    min-height: 150px;
+}
+
+label {
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Application Styles - Menu */
+.menu {
+    height: 100%;
+    color: #F0F0F0;
+    background: #444;
+}
+
+.menu-nav-items ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background: #494949;
+}
+
+.menu-nav-items ul a {
+    color: #F0F0F0;
+}
+
+.menu-nav-items ul a:hover {
+    text-decoration: none;
+}
+
+.menu-nav-items ul a li {
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #333;
+}
+
+.menu-nav-items ul a li.active {
+    font-weight: 600;
+    background: #48B5E7;
+}
+
+.menu-nav-items ul a li:hover {
+    font-weight: 600;
+    background: #48B5E7;
+}
+
+/* Application Styles - Top Menu */
+.menu-top {
+    color: #F0F0F0;
+    background: #333232;
+}
+
+/* Application Styles - Fonts */
+.font-raleway {
+    font-family: 'Raleway', sans-serif !important;
+}
+
+.font-roboto {
+    font-family: 'Roboto', sans-serif !important;
+}
+
+/* Application Styles - Validations */
+.required-field:before {
+    content: "* ";
+    color: red;
+    vertical-align: middle;
+    font-family: Arial !important;
+}
+
+/* Application Styles - Colors */
+.color-blue {
+    color: #48B5E7;
+}
+
+.color-white {
+    color: #FFF;
+}
+
+/* Application Styles - Backgrounds */
+.background-black {
+    background: #444;
+}
+
+.background-blue {
+    background: #48B5E7;
+}
+
+/* Application Styles - Font Weight */
+.bold {
+    font-weight: 600;
+}
+
+/* Application Styles - Inputs */
+.form-control {
+    font-size: 13px;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Application Styles - Bootstrap */
+.container-fluid {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 28px;
+    margin-right: auto;
+    margin-left: auto;
+}

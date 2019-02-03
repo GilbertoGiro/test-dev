@@ -28,12 +28,12 @@ class User extends Authenticatable
     ];
 
     /**
-     * Method to get related Tickets
+     * Method to get related Orders
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function tickets()
+    public function orders()
     {
-        return $this->hasMany(Ticket::class, 'user_id', 'id');
+        return $this->hasMany(Order::class, 'user_id', 'id');
     }
 }
