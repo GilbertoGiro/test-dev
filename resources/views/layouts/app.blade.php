@@ -15,13 +15,19 @@
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     </head>
     <body>
+        <!-- Error and success messages layout -->
+        @include('layouts.message')
+
+        <!-- Top navbar layout -->
         @include('layouts.top-navbar')
         <div class="container-fluid">
             <div class="row">
+                <!-- Left navbar layout -->
                 <div class="col-lg-3">
                     @include('layouts.left-navbar')
                 </div>
 
+                <!-- Content layout -->
                 <div class="col-lg-9">
                     @yield('content')
                 </div>

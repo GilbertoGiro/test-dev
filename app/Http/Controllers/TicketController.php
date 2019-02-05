@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TicketRequest;
 use App\Service\TicketService;
 
 class TicketController
@@ -42,5 +43,20 @@ class TicketController
     {
         $ticketRoute = true;
         return view('ticket.create', compact('ticketRoute'));
+    }
+
+    /**
+     * Method to create ticket
+     *
+     * @param TicketRequest $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function store(TicketRequest $request)
+    {
+        $condition = $this->service->create($request->all());
+        if ($condition['status'] === '00') {
+            return redirect()->back()->with('success', 'Ticket criado com sucesso');
+        }
+        return redirect()->back()->withErrors(['success' => $condition['message']])->withInput($request->all());
     }
 }

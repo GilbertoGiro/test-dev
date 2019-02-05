@@ -88,6 +88,17 @@ label {
     font-family: Arial !important;
 }
 
+.form-control.required {
+    border: 1px solid #C44D58 !important;
+}
+
+.form-group .error-message {
+    margin: 4px 0 0 0;
+    display: block;
+    font-size: 14px;
+    color: #C44D58 !important;
+}
+
 /* Application Styles - Colors */
 .color-blue {
     color: #48B5E7;
@@ -115,6 +126,69 @@ label {
 .form-control {
     font-size: 13px;
     font-family: 'Roboto', sans-serif;
+}
+
+/* Application Styles - Displays */
+.block {
+    display: block;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+/* Application Styles - Vertical aligns */
+.align-middle {
+    vertical-align: middle;
+}
+
+/* Application CSS - Toasters */
+.toaster {
+    width: auto;
+    max-width: 515px;
+    padding: 18px;
+    position: fixed;
+    border-radius: 4px;
+    top: 15px;
+    right: 15px;
+    z-index: 2;
+    word-wrap: break-word;
+    cursor: pointer;
+    visibility: hidden;
+    animation: show 6s;
+}
+
+.toaster-danger {
+    color: #F4F4F4;
+    background-color: #C44D58;
+}
+
+.toaster-danger:hover {
+    background-color: #AA434D;
+}
+
+.toaster-warning {
+    color: #F4F4F4;
+    background-color: #F4A86D;
+}
+
+.toaster-success {
+    color: #F4F4F4;
+    background-color: #728D72;
+}
+
+.toaster-info {
+    color: #F4F4F4;
+    background-color: #7095E4;
+}
+
+@keyframes show {
+    0% {
+        visibility: visible;
+    }
+    100% {
+        visibility: visible;
+    }
 }
 
 /* Application Styles - Bootstrap */

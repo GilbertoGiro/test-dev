@@ -16,6 +16,12 @@
                         <i class="fa fa-book"></i>
                     </li>
                 </a>
+                <a href="">
+                    <li class="{{ (!empty($home)) ? 'active' : '' }}">
+                        Query (<b>Relatório</b>)
+                        <i class="fa fa-book"></i>
+                    </li>
+                </a>
                 <a href="{{ route('ticket.index') }}">
                     <li class="{{ (!empty($ticketRoute)) ? 'active' : '' }}">
                         Tickets
