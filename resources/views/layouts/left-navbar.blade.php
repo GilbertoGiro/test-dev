@@ -16,8 +16,8 @@
                         <i class="fa fa-book"></i>
                     </li>
                 </a>
-                <a href="">
-                    <li class="{{ (!empty($home)) ? 'active' : '' }}">
+                <a href="{{ route('query.index') }}">
+                    <li class="{{ (!empty($query)) ? 'active' : '' }}">
                         Query (<b>Relatório</b>)
                         <i class="fa fa-book"></i>
                     </li>

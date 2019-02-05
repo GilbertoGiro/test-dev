@@ -129,8 +129,20 @@ table tfoot {
     color: #48B5E7;
 }
 
+.color-strong-blue {
+    color: blue;
+}
+
 .color-white {
     color: #FFF;
+}
+
+.color-red {
+    color: #C44D58;
+}
+
+.color-green {
+    color: #728D72;
 }
 
 /* Application Styles - Backgrounds */
