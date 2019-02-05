@@ -186,4 +186,14 @@ abstract class AbstractRepository
     {
         return $this->model->getTable();
     }
+
+    /**
+     * Method to get Model Object
+     *
+     * @return Model
+     */
+    public function getModel()
+    {
+        return $this->model;
+    }
 }

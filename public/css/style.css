@@ -26,9 +26,34 @@ label {
     font-family: 'Roboto', sans-serif;
 }
 
+table {
+    table-layout: fixed;
+}
+
+table thead tr th {
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+table tbody tr td {
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+table tfoot {
+    border-bottom: 1px solid #E0E0E0;
+}
+
 /* Application Styles - Menu */
 .menu {
-    height: 100%;
+    left: 0;
+    right: 15px;
+    min-height: 100%;
+    position: absolute;
     color: #F0F0F0;
     background: #444;
 }
@@ -182,6 +207,7 @@ label {
     background-color: #7095E4;
 }
 
+/* Application Styles - Keyframes (Effects) */
 @keyframes show {
     0% {
         visibility: visible;
@@ -194,8 +220,14 @@ label {
 /* Application Styles - Bootstrap */
 .container-fluid {
     width: 100%;
+    min-height: 100%;
     padding-left: 0;
     padding-right: 28px;
     margin-right: auto;
     margin-left: auto;
+}
+
+.pagination {
+    margin: 0 !important;
+    display: inline-flex !important;
 }

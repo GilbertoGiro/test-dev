@@ -14,3 +14,4 @@
 Route::get('/tickets', 'TicketController@index')->name('ticket.index');
 Route::get('/tickets/cadastrar', 'TicketController@create')->name('ticket.create');
 Route::post('/tickets/cadastrar', 'TicketController@store');
+Route::get('/tickets/{alias}', 'TicketController@show')->name('ticket.show');

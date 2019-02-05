@@ -23,7 +23,7 @@
         <div class="container-fluid">
             <div class="row">
                 <!-- Left navbar layout -->
-                <div class="col-lg-3">
+                <div class="col-lg-3 position-relative" style="min-height:100%;">
                     @include('layouts.left-navbar')
                 </div>
 

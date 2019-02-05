@@ -17,6 +17,7 @@ class CreateTicketsTable extends Migration
             $table->increments('id');
             $table->string('title', 200);
             $table->text('content');
+            $table->string('alias')->unique();
             $table->timestamps();
         });
     }

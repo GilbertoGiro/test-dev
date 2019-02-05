@@ -17,13 +17,38 @@ class TicketRepository extends AbstractRepository
     }
 
     /**
+     * Method to find ticket by alias
+     *
+     * @param string $alias
+     * @return \Illuminate\Database\Eloquent\Builder|\Illuminate\Database\Eloquent\Model|object|null
+     */
+    public function findByAlias(string $alias)
+    {
+        return $this->model::with(['order.user'])
+            ->where('alias', $alias)
+            ->first();
+    }
+
+    /**
      * Method to get paginated Tickets
      *
-     * @param int $paginate
+     * @param array $data
+     * @param int $limit
      * @return mixed
      */
-    public function paginate(int $paginate = 5)
+    public function paginate(array $data, int $limit = 5)
     {
-        return $this->model::with(['order.user'])->get();
+        $result = $this->model::with(['order.user'])->whereHas('order.user', function ($query) use ($data) {
+            foreach ($data as $key => $value) {
+                if ($key !== 'page') {
+                    if (is_numeric($value)) {
+                        $query->whereRaw('order_number LIKE ?', '%' . $value . '%');
+                        continue;
+                    }
+                    $query->whereRaw('LOWER(' . $key . ') LIKE LOWER(?)', '%' . $value . '%');
+                }
+            }
+        });
+        return $result->paginate($limit);
     }
 }

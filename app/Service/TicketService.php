@@ -5,6 +5,7 @@ namespace App\Service;
 use App\Repository\OrderRepository;
 use App\Repository\TicketRepository;
 use App\Repository\UserRepository;
+use App\Utilities\Str;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
@@ -41,14 +42,26 @@ class TicketService
     }
 
     /**
-     * Method to get paginated Tickets (with relations)
+     * Method to find Ticket by alias
      *
-     * @param int $paginate
+     * @param string $alias
      * @return mixed
      */
-    public function paginate(int $paginate = 5)
+    public function findByAlias(string $alias)
     {
-        return $this->repository->paginate($paginate);
+        return $this->repository->findByAlias($alias);
+    }
+
+    /**
+     * Method to get paginated Tickets (with relations)
+     *
+     * @param array $data
+     * @param int $limit
+     * @return mixed
+     */
+    public function paginate(array $data, int $limit = 5)
+    {
+        return $this->repository->paginate($data, $limit);
     }
 
     /**
@@ -61,14 +74,20 @@ class TicketService
     {
         DB::beginTransaction();
         try {
+            // Generate unique alias
+            $data['alias'] = Str::generateAlias($data['title'], $this->repository->getModel());
+            // Create or get user
             $user = $this->createUser($data);
+            // Find order
             $order = $this->orderRepository->findBy(['order_number' => $data['order_number']]);
             if (!empty($order)) {
+                // Update ticket if order exists (order_number)
                 $order->ticket->update([
                     'title' => $data['title'],
                     'content' => $data['content']
                 ]);
             } else {
+                // Create ticket and order
                 $ticket = $this->repository->create($data);
                 $this->orderRepository->create([
                     'order_number' => $data['order_number'],
