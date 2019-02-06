@@ -83,11 +83,13 @@
                     @endif
                 </tbody>
                 <tfoot>
-                    <tr class="text-center">
-                        <td colspan="6">
-                            {{ $tickets->links() }}
-                        </td>
-                    </tr>
+                    @if($tickets->total() > 5)
+                        <tr class="text-center">
+                            <td colspan="6">
+                                {{ $tickets->links() }}
+                            </td>
+                        </tr>
+                    @endif
                 </tfoot>
             </table>
         </div>

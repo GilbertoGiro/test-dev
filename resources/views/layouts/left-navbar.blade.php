@@ -10,7 +10,7 @@
         </div>
         <div class="menu-nav-items mt-4">
             <ul>
-                <a href="">
+                <a href="{{ route('index.index') }}">
                     <li class="{{ (!empty($home)) ? 'active' : '' }}">
                         O que deve ser feito
                         <i class="fa fa-book"></i>
