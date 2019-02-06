@@ -1,5 +1,15 @@
 # Teste PHP para Desenvolvedor
 
+## Instalação:
+- Clonar o projeto
+- Executar os seguintes comandos no terminal (**Ubuntu**):
+    - composer install
+    - cp .env.example .env (Substituir os valores referente às configurações de banco)
+    - php artisan key:generate
+    - php artisan migrate && php artisan db:seed
+    - php artisan config:clear && php artisan cache:clear
+    - php artisan serve
+
 ## Objetivo:
 Desenvolver uma ferramenta simples de cadastro de tickets para o setor de atendimento ao cliente da empresa.
 
